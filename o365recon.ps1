@@ -87,6 +87,10 @@ $CURRENTJOB = "./${projectname}/${projectname}"
 #  }
 
 
+## Dump Roles and Contact list
+
+Get-MsolUser -All | Select-Object -Property * | tee -FilePath ./${CURRENTJOB}.FullContactList.txt
+Get-MsolRole | tee -FilePath ./${CURRENTJOB}.FullRoles.txt
 
 
 ## COMPANYINFO - ON BY DEFAULT
